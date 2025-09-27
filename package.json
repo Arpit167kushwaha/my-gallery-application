@@ -7,16 +7,16 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build:web": "expo export:web",
+    "build:web": "expo export --platform web",
     "build:android": "expo build:android",
     "build:ios": "expo build:ios",
     "eject": "expo eject",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "predeploy": "npm run build:web",
-    "deploy": "gh-pages -d web-build",
-    "deploy:netlify": "npm run build:web && netlify deploy --prod --dir=web-build",
-    "deploy:vercel": "npm run build:web && vercel --prod"
+    "deploy": "gh-pages -d dist",
+    "deploy:netlify": "npm run build:web && netlify deploy --prod --dir=dist",
+    "deploy:vercel": "npm run build:web && vercel --prod dist"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
@@ -51,9 +51,8 @@
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
+    "gh-pages": "^6.3.0",
     "typescript": "~5.9.2"
   },
   "private": true
 }
-
-
