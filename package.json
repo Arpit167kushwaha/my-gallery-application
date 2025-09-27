@@ -1,13 +1,14 @@
 {
   "name": "my-gallery-application",
   "version": "1.0.0",
+  "homepage": "https://arpit167kushwaha.github.io/my-gallery-application",
   "main": "index.ts",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build:web": "expo export --platform web",
+    "build:web": "expo export --platform web && node -e \"const fs = require('fs'); const html = fs.readFileSync('dist/index.html', 'utf8'); fs.writeFileSync('dist/index.html', html.replace(/href=\\\"\\//g, 'href=\\\"./').replace(/src=\\\"\\//g, 'src=\\\"./'));\"",
     "build:android": "expo build:android",
     "build:ios": "expo build:ios",
     "eject": "expo eject",
@@ -51,8 +52,9 @@
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
-    "gh-pages": "^6.3.0",
     "typescript": "~5.9.2"
   },
   "private": true
 }
+
+
