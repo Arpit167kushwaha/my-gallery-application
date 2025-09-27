@@ -1,0 +1,72 @@
+{
+  "expo": {
+    "name": "My Gallery",
+    "slug": "my-gallery-application",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mygallery.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to the camera to take photos for your gallery.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to save and select images for your gallery.",
+        "NSMicrophoneUsageDescription": "This app needs access to the microphone for voice input captions."
+      }
+    },
+    "android": {
+      "package": "com.mygallery.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.INTERNET"
+      ],
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-camera",
+      "expo-media-library",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you add images to your gallery.",
+          "cameraPermission": "The app accesses your camera to let you take photos for your gallery."
+        }
+      ]
+    ],
+    "scheme": "my-gallery-app",
+    "extra": {
+      "firebaseApiKey": "your-firebase-api-key",
+      "firebaseAuthDomain": "your-project-id.firebaseapp.com",
+      "firebaseProjectId": "your-project-id",
+      "firebaseStorageBucket": "your-project-id.appspot.com",
+      "firebaseMessagingSenderId": "your-sender-id",
+      "firebaseAppId": "your-app-id"
+    }
+  }
+}
+
+
+
+
